@@ -1,10 +1,12 @@
 # import todolist_pb2 as TodoList
 import ai_response_pb2 as AIResponse
 
-response = AIResponse.YoloResponse()
-response.screen_width = 3;
+res = AIResponse.RapidApiResponse()
+name = AIResponse.Task.Name(1)
+res.task = AIResponse.Task.Value(name)
 
-print(response);
+print(res)
+
 
 # my_list = TodoList.TodoList()
 # my_list.owner_id = 1234
