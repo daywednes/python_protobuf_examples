@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x0etodolist.proto\x12\tprotoblog\"\xb0\x01\n\x08TodoList\x12\x10\n\x08owner_id\x18\x01 \x01(\x05\x12\x12\n\nowner_name\x18\x02 \x01(\t\x12,\n\x05todos\x18\x03 \x03(\x0b\x32\x1d.protoblog.TodoList.ListItems\x1aP\n\tListItems\x12#\n\x05state\x18\x01 \x01(\x0e\x32\x14.protoblog.TaskState\x12\x0c\n\x04task\x18\x02 \x01(\t\x12\x10\n\x08\x64ue_date\x18\x03 \x01(\t*e\n\tTaskState\x12\r\n\tTASK_OPEN\x10\x00\x12\x14\n\x10TASK_IN_PROGRESS\x10\x01\x12\x13\n\x0fTASK_POST_PONED\x10\x02\x12\x0f\n\x0bTASK_CLOSED\x10\x03\x12\r\n\tTASK_DONE\x10\x04\x62\x06proto3'
+  serialized_pb=b'\n\x0etodolist.proto\x12\tprotoblog\"\xc8\x02\n\x08TodoList\x12\x10\n\x08owner_id\x18\x01 \x01(\x05\x12\x12\n\nowner_name\x18\x02 \x01(\t\x12,\n\x05todos\x18\x03 \x03(\x0b\x32\x1d.protoblog.TodoList.ListItems\x12\x31\n\x08todos_v2\x18\x04 \x03(\x0b\x32\x1f.protoblog.TodoList.ListItemsV2\x12\x0f\n\x07soluong\x18\x65 \x01(\x05\x1aP\n\tListItems\x12#\n\x05state\x18\x01 \x01(\x0e\x32\x14.protoblog.TaskState\x12\x0c\n\x04task\x18\x02 \x01(\t\x12\x10\n\x08\x64ue_date\x18\x03 \x01(\t\x1aR\n\x0bListItemsV2\x12#\n\x05state\x18\x01 \x01(\x0e\x32\x14.protoblog.TaskState\x12\x0c\n\x04task\x18\x02 \x01(\t\x12\x10\n\x08\x64ue_date\x18\x03 \x01(\t*e\n\tTaskState\x12\r\n\tTASK_OPEN\x10\x00\x12\x14\n\x10TASK_IN_PROGRESS\x10\x01\x12\x13\n\x0fTASK_POST_PONED\x10\x02\x12\x0f\n\x0bTASK_CLOSED\x10\x03\x12\r\n\tTASK_DONE\x10\x04\x62\x06proto3'
 )
 
 _TASKSTATE = _descriptor.EnumDescriptor(
@@ -58,8 +58,8 @@ _TASKSTATE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=208,
-  serialized_end=309,
+  serialized_start=360,
+  serialized_end=461,
 )
 _sym_db.RegisterEnumDescriptor(_TASKSTATE)
 
@@ -113,8 +113,53 @@ _TODOLIST_LISTITEMS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=126,
-  serialized_end=206,
+  serialized_start=194,
+  serialized_end=274,
+)
+
+_TODOLIST_LISTITEMSV2 = _descriptor.Descriptor(
+  name='ListItemsV2',
+  full_name='protoblog.TodoList.ListItemsV2',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='state', full_name='protoblog.TodoList.ListItemsV2.state', index=0,
+      number=1, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='task', full_name='protoblog.TodoList.ListItemsV2.task', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='due_date', full_name='protoblog.TodoList.ListItemsV2.due_date', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=276,
+  serialized_end=358,
 )
 
 _TODOLIST = _descriptor.Descriptor(
@@ -146,10 +191,24 @@ _TODOLIST = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='todos_v2', full_name='protoblog.TodoList.todos_v2', index=3,
+      number=4, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='soluong', full_name='protoblog.TodoList.soluong', index=4,
+      number=101, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
-  nested_types=[_TODOLIST_LISTITEMS, ],
+  nested_types=[_TODOLIST_LISTITEMS, _TODOLIST_LISTITEMSV2, ],
   enum_types=[
   ],
   serialized_options=None,
@@ -159,12 +218,15 @@ _TODOLIST = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=30,
-  serialized_end=206,
+  serialized_end=358,
 )
 
 _TODOLIST_LISTITEMS.fields_by_name['state'].enum_type = _TASKSTATE
 _TODOLIST_LISTITEMS.containing_type = _TODOLIST
+_TODOLIST_LISTITEMSV2.fields_by_name['state'].enum_type = _TASKSTATE
+_TODOLIST_LISTITEMSV2.containing_type = _TODOLIST
 _TODOLIST.fields_by_name['todos'].message_type = _TODOLIST_LISTITEMS
+_TODOLIST.fields_by_name['todos_v2'].message_type = _TODOLIST_LISTITEMSV2
 DESCRIPTOR.message_types_by_name['TodoList'] = _TODOLIST
 DESCRIPTOR.enum_types_by_name['TaskState'] = _TASKSTATE
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
@@ -177,12 +239,20 @@ TodoList = _reflection.GeneratedProtocolMessageType('TodoList', (_message.Messag
     # @@protoc_insertion_point(class_scope:protoblog.TodoList.ListItems)
     })
   ,
+
+  'ListItemsV2' : _reflection.GeneratedProtocolMessageType('ListItemsV2', (_message.Message,), {
+    'DESCRIPTOR' : _TODOLIST_LISTITEMSV2,
+    '__module__' : 'todolist_pb2'
+    # @@protoc_insertion_point(class_scope:protoblog.TodoList.ListItemsV2)
+    })
+  ,
   'DESCRIPTOR' : _TODOLIST,
   '__module__' : 'todolist_pb2'
   # @@protoc_insertion_point(class_scope:protoblog.TodoList)
   })
 _sym_db.RegisterMessage(TodoList)
 _sym_db.RegisterMessage(TodoList.ListItems)
+_sym_db.RegisterMessage(TodoList.ListItemsV2)
 
 
 # @@protoc_insertion_point(module_scope)
